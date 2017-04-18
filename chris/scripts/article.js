@@ -30,10 +30,10 @@ Article.loadAll = function(rawData) {
 }
 Article.fetchAll = function() {
   if (localStorage.rawData) {
-    Article.loadAll(JSON.parse(localStorage.getItem('rawData')));
+    Article.loadAll(JSON.parse(localStorage.rawData));
     articleView.initIndexPage();
   } else {
-    $.getJSON('data/hackerIpsum.json').done(function(rawData){
+    $.getJSON('data/hackerIpsum.json').then(function(rawData){
       Article.loadAll(rawData);
       localStorage.setItem('rawData', JSON.stringify(rawData));
       Article.initIndexPage();
