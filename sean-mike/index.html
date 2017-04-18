@@ -85,7 +85,9 @@
     <script src="/scripts/articleView.js"></script>
     <script>
       // TODO: What model function do we need to call, to initiate the retrieval of data?
-      articleView.initNewArticlePage();
+      Article.prototype.toHtml()
+      Article.fetchAll();
+      Article.loadAll();
     </script>
   </body>
 </html>
